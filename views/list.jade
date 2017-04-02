@@ -1,0 +1,42 @@
+extends layout
+
+block content
+    .container
+        <div class="header clearfix">
+        <nav>
+        <ul class="nav nav-pills pull-right">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">About</a></li>
+        <li role="presentation"><a href="#">Contact</a></li>
+        </ul>
+        </nav>
+        <h3 class="text-muted">VTFlix</h3>
+        </div>
+        .jumbotron.text-center
+            h1 Get your movies!
+            p CS6665 Database Systems Administration Assignment #5, created by Dinghao Li
+        .row
+            table.table.table-hover.table-bordered
+                tbody
+                    for video, i in videos
+                        -if(i % 4 == 0){
+                            .row
+                        -}
+                            .col-lg-3.text-center
+                                img(src= video.img_path, width='100%')
+                                h2 #{video.title}
+                                dl
+                                    //dt Genre
+                                    //dd #{video.genre}
+                                    //dt Release
+                                    //dd #{video.release_date}
+                                    //dt Rated
+                                    //dd #{video.MPAA_name}
+                                    //dt Country
+                                    //dd #{video.country}
+                                    p
+                                        a(class="btn btn-primary",href="../movie/#{video.VID}",role="button") View details &raquo;
+
+
+
+

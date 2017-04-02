@@ -1,0 +1,42 @@
+extends layout
+
+block content
+    .container
+        <div class="header clearfix">
+        <nav>
+        <ul class="nav nav-pills pull-right">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">About</a></li>
+        <li role="presentation"><a href="#">Contact</a></li>
+        </ul>
+        </nav>
+        <h3 class="text-muted">VTFlix</h3>
+        </div>
+        .jumbotron.text-center
+            p Movie details
+        .row
+            table.table.table-hover.table-bordered
+                tbody
+                    for video in videos
+                        .col-lg-4
+                            img(src= video.img_path)
+                        .col-lg-8
+                            h2 #{video.title}
+                            dl
+                                dt Description
+                                dd #{video.info}
+                                dt Color
+                                dd #{video.color}
+                                dt Genre
+                                dd #{video.genre}
+                                dt Release
+                                dd #{video.release_date}
+                                dt Rated
+                                dd #{video.MPAA_name}
+                                dd #{video.MPAA_rating}
+                                dt Country
+                                dd #{video.country}
+
+
+
+
